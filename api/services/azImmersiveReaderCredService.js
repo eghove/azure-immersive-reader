@@ -1,5 +1,7 @@
 const keys = require("../../keys");
 const request = require("request");
+const axios = require("axios");
+const qs = require("qs");
 
 const TENANT_ID = keys.TENANT_ID.toString();
 const CLIENT_ID = keys.CLIENT_ID.toString();
@@ -49,5 +51,26 @@ module.exports = {
             console.log(err);
             return res.status(500).send('CogSvcs IssueToken error');
         } 
+    },
+    getCredentialsAxios : function(req, res) {
+        const WINDOWS_LOGIN_URL =  `https://login.windows.net/${TENANT_ID}/oauth2/token`;
+        axios({
+            method: "post",
+            headers: {'content-type': 'application/x-www-form-urlencoded'},
+            url: WINDOWS_LOGIN_URL,
+            data: qs.stringify({
+                grant_type: 'client_credentials',
+                client_id: CLIENT_ID,
+                client_secret: CLIENT_SECRET,
+                resource: 'https://cognitiveservices.azure.com/'
+            })
+        })
+        .then(function (response){
+            res.json(response.data)
+        })
+        .catch((error) => {
+            res.status(422).json(error);
+        })
     }
+
 }
