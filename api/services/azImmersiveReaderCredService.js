@@ -52,6 +52,7 @@ module.exports = {
             return res.status(500).send('CogSvcs IssueToken error');
         } 
     },
+    // bringing back axios since request is deprecated.
     getCredentialsAxios : function(req, res) {
         const WINDOWS_LOGIN_URL =  `https://login.windows.net/${TENANT_ID}/oauth2/token`;
         axios({
