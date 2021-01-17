@@ -7,7 +7,7 @@ const app = express();
 const bodyParser = require("body-parser");
 
 // pull in API routes
-
+const IMMERSIVE_READER_ROUTE = require("./api/controllers/immersiveReaderController");
 // Define middleare
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes
-
+app.use("/api/azimmersivereader", IMMERSIVE_READER_ROUTE);
 // Send all other requests to the React app.
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
