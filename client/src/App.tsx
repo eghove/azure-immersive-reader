@@ -2,26 +2,34 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import api from "./utils/api";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// PAGES
+import ContactPage from "./components/Pages/Contact/ContactPage";
+import ProductsPage from "./components/Pages/Products/ProductsPage";
+import HomePage from "./components/Pages/Home/HomePage";
+import NotFoundPage from "./components/Pages/NotFound/NotFoundPage";
 
 function App() {
   // Below to validate the api utility retrieves the credentials needed.
   api.getAzImmersiveReaderCredentials();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Switch>
+          <Route exact path="/products">
+            <ProductsPage />
+          </Route>
+          <Route exact path="/contact">
+            <ContactPage />
+          </Route>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route>
+            <NotFoundPage />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
