@@ -40,13 +40,6 @@ function App() {
   getAzImmersiveReaderCreds();
   return (
     <Router>
-      {/* Test implementation of ImmersiveReader */}
-      <ImmersiveReader
-        title={"Test"}
-        text={"test text"}
-        accessToken={accessToken}
-        subdomain={subdomain}
-      ></ImmersiveReader>
       <Container fluid>
         <div className="App">
           <NavBar></NavBar>
@@ -58,7 +51,7 @@ function App() {
               <ContactPage />
             </Route>
             <Route exact path="/">
-              <HomePage />
+              <HomePage accessToken={accessToken} subdomain={subdomain} />
             </Route>
             <Route>
               <NotFoundPage />
