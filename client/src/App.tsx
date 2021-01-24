@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import api from "./utils/api";
@@ -15,8 +15,27 @@ import HomePage from "./components/Pages/Home/HomePage";
 import NotFoundPage from "./components/Pages/NotFound/NotFoundPage";
 
 function App() {
+  // STATE
+  const [accessToken, setAccessToken] = useState("");
+  const [subdomain, setSubdomain] = useState("");
+  const [
+    apiAzImmersiveReaderCredError,
+    setapiAzImmersiveReaderCredError,
+  ] = useState(false);
+
+  // helper function to set states with Az credentials
+  const getAzImmersiveReaderCreds = async () => {
+    let results = await api.getAzImmersiveReaderCredentials();
+    if (results.data.access_token && results.data.subdomain) {
+      setAccessToken(results.data.access_token);
+      setSubdomain(results.data.subdomain);
+    } else {
+      setapiAzImmersiveReaderCredError(true);
+    }
+  };
+
   // Below to validate the api utility retrieves the credentials needed.
-  api.getAzImmersiveReaderCredentials();
+  getAzImmersiveReaderCreds();
   return (
     <Router>
       <Container fluid>
