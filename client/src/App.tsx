@@ -8,6 +8,8 @@ import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 // Navbar import
 import NavBar from "./components/Pages/Shared/NavBar";
+// test import
+import ImmersiveReader from "./components/Pages/Shared/ImmersiveReader";
 // PAGES
 import ContactPage from "./components/Pages/Contact/ContactPage";
 import ProductsPage from "./components/Pages/Products/ProductsPage";
@@ -38,6 +40,13 @@ function App() {
   getAzImmersiveReaderCreds();
   return (
     <Router>
+      {/* Test implementation of ImmersiveReader */}
+      <ImmersiveReader
+        title={"Test"}
+        text={"test text"}
+        accessToken={accessToken}
+        subdomain={subdomain}
+      ></ImmersiveReader>
       <Container fluid>
         <div className="App">
           <NavBar></NavBar>
