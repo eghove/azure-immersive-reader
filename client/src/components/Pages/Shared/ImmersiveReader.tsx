@@ -1,6 +1,6 @@
 // Modified the implementation show here : https://github.com/sinyaa/immersive-reader/blob/master/src/immersive-reader.tsx
 import { launchAsync } from "@microsoft/immersive-reader-sdk";
-
+import Button from "react-bootstrap/Button";
 export interface ImmersiveReaderProps {
   title: string;
   text: string;
@@ -31,13 +31,8 @@ const ImmersiveReader = (props: ImmersiveReaderProps) => {
     );
   };
 
-  return (
-    <button
-      className="immersive-reader-button"
-      onClick={launchImmersiveReader}
-      data-button-style="iconAndText"
-    ></button>
-  );
+  //TODO : figure out a way to incorporate the original logo so it doesn't disappear on re-render.
+  return <Button onClick={launchImmersiveReader}>Immersive Reader</Button>;
 };
 
 export default ImmersiveReader;
