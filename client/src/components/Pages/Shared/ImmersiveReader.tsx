@@ -16,7 +16,7 @@ const ImmersiveReader = (props: ImmersiveReaderProps) => {
       {
         content: props.text,
         lang: "en-us",
-        mimeType: "text/plain",
+        mimeType: "text/html",
       },
     ],
   };
