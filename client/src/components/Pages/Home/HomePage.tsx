@@ -1,7 +1,7 @@
 import React from "react";
 import ImmersiveReader from "../Shared/ImmersiveReader";
 // page content import
-import homePageContent from "./homePageContent";
+import { htmlHelper, homePageContent } from "./homePageContent";
 // react-bootstrap imports
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -32,9 +32,7 @@ const HomePage = (props: HomePageProps) => {
               <p>{homePageContent.introText2}</p>
               <ImmersiveReader
                 title={"Hove's Stoves"}
-                text={
-                  homePageContent.introText1 + " " + homePageContent.introText2
-                }
+                text={htmlHelper}
                 accessToken={props.accessToken}
                 subdomain={props.subdomain}
               ></ImmersiveReader>
