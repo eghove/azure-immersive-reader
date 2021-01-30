@@ -46,7 +46,7 @@ function App() {
               <ProductsPage />
             </Route>
             <Route exact path="/contact">
-              <ContactPage />
+              <ContactPage accessToken={accessToken} subdomain={subdomain} />
             </Route>
             <Route exact path="/">
               <HomePage accessToken={accessToken} subdomain={subdomain} />
