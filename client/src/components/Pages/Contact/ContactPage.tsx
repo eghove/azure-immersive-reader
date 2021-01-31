@@ -1,6 +1,6 @@
 import React from "react";
 import ImmersiveReader from "../Shared/ImmersiveReader";
-// page content import
+// page content imports
 import { contactPageContent, htmlHelper } from "./contactPageContent";
 // react-bootstrap imports
 import Row from "react-bootstrap/Row";
