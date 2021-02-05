@@ -1,14 +1,22 @@
 import React from "react";
 import ImmersiveReader from "../Shared/ImmersiveReader";
 // page content imports
-import { productsPageContent, products } from "./productsPageContent";
+import {
+  productsPageContent,
+  products,
+  azReaderData,
+} from "./productsPageContent";
 // react-bootstrap imports
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 
-const ProductsPage = () => {
+export interface ProductsPageProps {
+  accessToken: string;
+  subdomain: string;
+}
+const ProductsPage = (props: ProductsPageProps) => {
   return (
     <React.Fragment>
       <Row>
@@ -31,28 +39,50 @@ const ProductsPage = () => {
               <Card.Title>{products[0].title}</Card.Title>
               <Card.Text>{products[0].description}</Card.Text>
             </Card.Body>
+            <ImmersiveReader
+              title={"Products"}
+              text={azReaderData[0].html}
+              accessToken={props.accessToken}
+              subdomain={props.subdomain}
+            />
           </Card>
         </Col>
         <Col>
           <Card>
             <Card.Body>
-              <Card.Title>Big Red</Card.Title>
-              <Card.Text>
-                This is a classic red stove, sure to be a coversation starter in
-                your home!
-              </Card.Text>
+              <Card.Img
+                variant="top"
+                src={process.env.PUBLIC_URL + products[1].imgSrc}
+                alt={products[1].altText}
+              />
+              <Card.Title>{products[1].title}</Card.Title>
+              <Card.Text>{products[1].description}</Card.Text>
             </Card.Body>
+            <ImmersiveReader
+              title={"Products"}
+              text={azReaderData[1].html}
+              accessToken={props.accessToken}
+              subdomain={props.subdomain}
+            />
           </Card>
         </Col>
         <Col>
           <Card>
             <Card.Body>
-              <Card.Title>Big Red</Card.Title>
-              <Card.Text>
-                This is a classic red stove, sure to be a coversation starter in
-                your home!
-              </Card.Text>
+              <Card.Img
+                variant="top"
+                src={process.env.PUBLIC_URL + products[2].imgSrc}
+                alt={products[2].altText}
+              />
+              <Card.Title>{products[2].title}</Card.Title>
+              <Card.Text>{products[2].description}</Card.Text>
             </Card.Body>
+            <ImmersiveReader
+              title={"Products"}
+              text={azReaderData[2].html}
+              accessToken={props.accessToken}
+              subdomain={props.subdomain}
+            />
           </Card>
         </Col>
       </Row>

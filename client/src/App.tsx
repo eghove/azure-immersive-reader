@@ -46,7 +46,7 @@ function App() {
           <NavBar></NavBar>
           <Switch>
             <Route exact path="/products">
-              <ProductsPage />
+              <ProductsPage accessToken={accessToken} subdomain={subdomain} />
             </Route>
             <Route exact path="/contact">
               <ContactPage accessToken={accessToken} subdomain={subdomain} />
