@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import api from "./utils/api";
@@ -34,8 +34,11 @@ function App() {
     }
   };
 
-  // Below to validate the api utility retrieves the credentials needed.
-  getAzImmersiveReaderCreds();
+  // wrapping getAzImmeriveReaderCreds is a useEffect with empty arayto make sure it only happens once, on initial load.
+  useEffect(() => {
+    getAzImmersiveReaderCreds();
+  }, []);
+
   return (
     <Router>
       <Container fluid>
