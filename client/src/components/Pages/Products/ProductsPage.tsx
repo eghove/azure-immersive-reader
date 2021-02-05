@@ -28,61 +28,64 @@ const ProductsPage = (props: ProductsPageProps) => {
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col md={4} sm={4}>
           <Card>
             <Card.Body>
               <Card.Img
                 variant="top"
+                style={{ maxHeight: "40rem", maxWidth: "40rem" }}
                 src={process.env.PUBLIC_URL + products[0].imgSrc}
                 alt={products[0].altText}
               />
               <Card.Title>{products[0].title}</Card.Title>
               <Card.Text>{products[0].description}</Card.Text>
+              <ImmersiveReader
+                title={"Products"}
+                text={azReaderData[0].html}
+                accessToken={props.accessToken}
+                subdomain={props.subdomain}
+              />
             </Card.Body>
-            <ImmersiveReader
-              title={"Products"}
-              text={azReaderData[0].html}
-              accessToken={props.accessToken}
-              subdomain={props.subdomain}
-            />
           </Card>
         </Col>
-        <Col>
+        <Col md={4} sm={4}>
           <Card>
             <Card.Body>
               <Card.Img
                 variant="top"
+                style={{ maxHeight: "40rem", maxWidth: "40rem" }}
                 src={process.env.PUBLIC_URL + products[1].imgSrc}
                 alt={products[1].altText}
               />
               <Card.Title>{products[1].title}</Card.Title>
               <Card.Text>{products[1].description}</Card.Text>
+              <ImmersiveReader
+                title={"Products"}
+                text={azReaderData[1].html}
+                accessToken={props.accessToken}
+                subdomain={props.subdomain}
+              />
             </Card.Body>
-            <ImmersiveReader
-              title={"Products"}
-              text={azReaderData[1].html}
-              accessToken={props.accessToken}
-              subdomain={props.subdomain}
-            />
           </Card>
         </Col>
-        <Col>
+        <Col md={4} sm={4}>
           <Card>
             <Card.Body>
               <Card.Img
                 variant="top"
+                style={{ maxHeight: "40rem", maxWidth: "40rem" }}
                 src={process.env.PUBLIC_URL + products[2].imgSrc}
                 alt={products[2].altText}
               />
               <Card.Title>{products[2].title}</Card.Title>
               <Card.Text>{products[2].description}</Card.Text>
+              <ImmersiveReader
+                title={"Products"}
+                text={azReaderData[2].html}
+                accessToken={props.accessToken}
+                subdomain={props.subdomain}
+              />
             </Card.Body>
-            <ImmersiveReader
-              title={"Products"}
-              text={azReaderData[2].html}
-              accessToken={props.accessToken}
-              subdomain={props.subdomain}
-            />
           </Card>
         </Col>
       </Row>
