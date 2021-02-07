@@ -1,6 +1,10 @@
 // Modified the implementation show here : https://github.com/sinyaa/immersive-reader/blob/master/src/immersive-reader.tsx
 import { launchAsync } from "@microsoft/immersive-reader-sdk";
+// Bootstrap imports
 import Button from "react-bootstrap/Button";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+
 export interface ImmersiveReaderProps {
   title: string;
   text: string;
@@ -32,7 +36,20 @@ const ImmersiveReader = (props: ImmersiveReaderProps) => {
   };
 
   //TODO : figure out a way to incorporate the original logo so it doesn't disappear on re-render.
-  return <Button onClick={launchImmersiveReader}>Immersive Reader</Button>;
+  return (
+    <>
+      <OverlayTrigger
+        placement={"right"}
+        overlay={
+          <Tooltip id={"right-tooltip"}>
+            Click here to launch the Azure Immersive Reader.
+          </Tooltip>
+        }
+      >
+        <Button onClick={launchImmersiveReader}>Immersive Reader</Button>
+      </OverlayTrigger>
+    </>
+  );
 };
 
 export default ImmersiveReader;
