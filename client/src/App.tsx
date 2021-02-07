@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import api from "./utils/api";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
