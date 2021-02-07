@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import api from "./utils/api";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Bootstrap imports
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
