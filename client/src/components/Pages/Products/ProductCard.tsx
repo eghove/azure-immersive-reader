@@ -25,7 +25,7 @@ export const ProductCard = (props: ProductCardProps) => {
         <Card.Body>
           <Card.Img
             variant="top"
-            style={{ maxHeight: "40rem", maxWidth: "40rem" }}
+            style={{ maxHeight: "30rem", maxWidth: "30rem" }}
             src={process.env.PUBLIC_URL + props.product.imgSrc}
             alt={props.product.altText}
           />

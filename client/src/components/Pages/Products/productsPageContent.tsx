@@ -8,7 +8,7 @@ export const products = [
     id: 1,
     title: "Big Red",
     description:
-      "This is a classic red stove, sure to be a coversation starter in your home!",
+      "This is a classic red stove, sure to be a coversation starter in your home! Go Big Red!",
     imgSrc: "/imgs/BigRed.jpg",
     altText: "Big Red vintage stove",
   },
