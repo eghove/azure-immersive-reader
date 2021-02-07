@@ -25,7 +25,7 @@ const ContactPage = (props: ContactPageProps) => {
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col md={{ span: 8, offset: 2 }}>
           <Card>
             <Card.Body>
               <p>{contactPageContent.phoneText}</p>

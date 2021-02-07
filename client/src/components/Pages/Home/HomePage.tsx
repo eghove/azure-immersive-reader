@@ -25,7 +25,7 @@ const HomePage = (props: HomePageProps) => {
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col md={{ span: 8, offset: 2 }}>
           <Card>
             <Card.Body>
               <p>{homePageContent.introText1}</p>
