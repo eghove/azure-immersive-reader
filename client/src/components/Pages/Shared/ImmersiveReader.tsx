@@ -35,7 +35,6 @@ const ImmersiveReader = (props: ImmersiveReaderProps) => {
     );
   };
 
-  //TODO : figure out a way to incorporate the original logo so it doesn't disappear on re-render.
   return (
     <>
       <OverlayTrigger
