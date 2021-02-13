@@ -32,6 +32,7 @@ const ProductsPage = (props: PagesProps) => {
               accessToken={props.accessToken}
               subdomain={props.subdomain}
               azReaderHtml={azReaderData[index].html}
+              azCredError={props.azCredError}
             />
           );
         })}

@@ -31,6 +31,7 @@ const NotFoundPage = (props: PagesProps) => {
                 text={notFoundPageHtmlBuilder(location.pathname)}
                 accessToken={props.accessToken}
                 subdomain={props.subdomain}
+                azCredError={props.azCredError}
               ></ImmersiveReader>
             </Card.Body>
           </Card>

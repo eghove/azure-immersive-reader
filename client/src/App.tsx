@@ -24,11 +24,17 @@ function App() {
 
   // helper function to set states with Az credentials
   const getAzImmersiveReaderCreds = async () => {
-    let results = await api.getAzImmersiveReaderCredentials();
-    if (results.data.access_token && results.data.subdomain) {
-      setAccessToken(results.data.access_token);
-      setSubdomain(results.data.subdomain);
-    } else {
+    try {
+      let results = await api.getAzImmersiveReaderCredentials();
+      if (results.data.access_token && results.data.subdomain) {
+        setAccessToken(results.data.access_token);
+        setSubdomain(results.data.subdomain);
+      } else {
+        // if the request is successful but response comes back without data needed, set to true.
+        setapiAzImmersiveReaderCredError(true);
+      }
+    } catch {
+      // catch if the request errors out.
       setapiAzImmersiveReaderCredError(true);
     }
   };
@@ -45,16 +51,32 @@ function App() {
           <NavBar></NavBar>
           <Switch>
             <Route exact path="/products">
-              <ProductsPage accessToken={accessToken} subdomain={subdomain} />
+              <ProductsPage
+                accessToken={accessToken}
+                subdomain={subdomain}
+                azCredError={apiAzImmersiveReaderCredError}
+              />
             </Route>
             <Route exact path="/contact">
-              <ContactPage accessToken={accessToken} subdomain={subdomain} />
+              <ContactPage
+                accessToken={accessToken}
+                subdomain={subdomain}
+                azCredError={apiAzImmersiveReaderCredError}
+              />
             </Route>
             <Route exact path="/">
-              <HomePage accessToken={accessToken} subdomain={subdomain} />
+              <HomePage
+                accessToken={accessToken}
+                subdomain={subdomain}
+                azCredError={apiAzImmersiveReaderCredError}
+              />
             </Route>
             <Route>
-              <NotFoundPage accessToken={accessToken} subdomain={subdomain} />
+              <NotFoundPage
+                accessToken={accessToken}
+                subdomain={subdomain}
+                azCredError={apiAzImmersiveReaderCredError}
+              />
             </Route>
           </Switch>
         </div>

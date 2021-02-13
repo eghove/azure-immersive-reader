@@ -15,6 +15,7 @@ export interface ProductCardProps {
     altText: string;
   };
   azReaderHtml: string;
+  azCredError: boolean;
 }
 // renders the individual product cards.
 // note, currently only set up to handle three cards in array.
@@ -36,6 +37,7 @@ export const ProductCard = (props: ProductCardProps) => {
             text={props.azReaderHtml}
             accessToken={props.accessToken}
             subdomain={props.subdomain}
+            azCredError={props.azCredError}
           />
         </Card.Body>
       </Card>

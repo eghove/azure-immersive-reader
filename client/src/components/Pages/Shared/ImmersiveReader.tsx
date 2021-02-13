@@ -10,6 +10,7 @@ export interface ImmersiveReaderProps {
   text: string;
   accessToken: string;
   subdomain: string;
+  azCredError: boolean;
 }
 
 const ImmersiveReader = (props: ImmersiveReaderProps) => {
@@ -45,7 +46,9 @@ const ImmersiveReader = (props: ImmersiveReaderProps) => {
           </Tooltip>
         }
       >
-        <Button onClick={launchImmersiveReader}>Immersive Reader</Button>
+        <Button onClick={launchImmersiveReader} disabled={props.azCredError}>
+          Immersive Reader
+        </Button>
       </OverlayTrigger>
     </>
   );

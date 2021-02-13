@@ -31,6 +31,7 @@ const HomePage = (props: PagesProps) => {
                 text={htmlHelper}
                 accessToken={props.accessToken}
                 subdomain={props.subdomain}
+                azCredError={props.azCredError}
               ></ImmersiveReader>
             </Card.Body>
           </Card>
