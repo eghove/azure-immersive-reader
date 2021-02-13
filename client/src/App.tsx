@@ -54,7 +54,7 @@ function App() {
               <HomePage accessToken={accessToken} subdomain={subdomain} />
             </Route>
             <Route>
-              <NotFoundPage />
+              <NotFoundPage accessToken={accessToken} subdomain={subdomain} />
             </Route>
           </Switch>
         </div>
