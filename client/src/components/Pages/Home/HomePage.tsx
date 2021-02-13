@@ -1,5 +1,6 @@
 import React from "react";
 import ImmersiveReader from "../Shared/ImmersiveReader";
+import PagesProps from "../Shared/IPagesProps";
 // page content import
 import { htmlHelper, homePageContent } from "./homePageContent";
 // react-bootstrap imports
@@ -8,12 +9,7 @@ import Col from "react-bootstrap/Col";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 
-export interface HomePageProps {
-  accessToken: string;
-  subdomain: string;
-}
-
-const HomePage = (props: HomePageProps) => {
+const HomePage = (props: PagesProps) => {
   return (
     <React.Fragment>
       <Row>

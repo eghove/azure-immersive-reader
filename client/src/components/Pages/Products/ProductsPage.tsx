@@ -1,4 +1,5 @@
 import React from "react";
+import PagesProps from "../Shared/IPagesProps";
 // page content imports
 import {
   productsPageContent,
@@ -12,11 +13,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Jumbotron from "react-bootstrap/Jumbotron";
 
-export interface ProductsPageProps {
-  accessToken: string;
-  subdomain: string;
-}
-const ProductsPage = (props: ProductsPageProps) => {
+const ProductsPage = (props: PagesProps) => {
   return (
     <React.Fragment>
       <Row>

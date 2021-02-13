@@ -1,5 +1,6 @@
 import React from "react";
 import ImmersiveReader from "../Shared/ImmersiveReader";
+import PagesProps from "../Shared/IPagesProps";
 // page content imports
 import { contactPageContent, htmlHelper } from "./contactPageContent";
 // react-bootstrap imports
@@ -8,12 +9,7 @@ import Col from "react-bootstrap/Col";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 
-export interface ContactPageProps {
-  accessToken: string;
-  subdomain: string;
-}
-
-const ContactPage = (props: ContactPageProps) => {
+const ContactPage = (props: PagesProps) => {
   return (
     <React.Fragment>
       <Row>
