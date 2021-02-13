@@ -17,8 +17,11 @@ export interface ProductCardProps {
   azReaderHtml: string;
   azCredError: boolean;
 }
-// renders the individual product cards.
-// note, currently only set up to handle three cards in array.
+
+/**
+ * Renders product cards in a Row. Currently configured to look best with three items.
+ * @interface ProductCardProps
+ */
 export const ProductCard = (props: ProductCardProps) => {
   return (
     <Col md={4} sm={4}>

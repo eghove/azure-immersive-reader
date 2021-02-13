@@ -7,6 +7,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 
+/**
+ * Changes the HTML supplied to the Immersive Reader based on the pathname.
+ * @params pathname
+ */
 const notFoundPageHtmlBuilder = (pathname: string) => {
   return `<p>
   The page you requested using ${pathname} was not found.

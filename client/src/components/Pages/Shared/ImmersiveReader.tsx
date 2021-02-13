@@ -13,6 +13,10 @@ export interface ImmersiveReaderProps {
   azCredError: boolean;
 }
 
+/**
+ * Launches the Azure Immersive Reader with supplied props on button click.
+ * @interface ImmersiveReaderProps
+ */
 const ImmersiveReader = (props: ImmersiveReaderProps) => {
   // build the data
   const contentData = {
