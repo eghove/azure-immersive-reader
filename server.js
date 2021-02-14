@@ -22,9 +22,9 @@ if (process.env.NODE_ENV === "production") {
 app.use("/api/azimmersivereader", IMMERSIVE_READER_ROUTE);
 // Send all other requests to the React app.
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
-  });
-  
-  app.listen(PORT, () => {
-    console.log(`🌎 ==> API server now on port ${PORT}!`);
-  });
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
+app.listen(PORT, () => {
+  console.log(`🌎 ==> API server now on port ${PORT}!`);
+});
