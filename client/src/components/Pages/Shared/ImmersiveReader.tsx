@@ -7,7 +7,7 @@ import Tooltip from "react-bootstrap/Tooltip";
 
 export interface ImmersiveReaderProps {
   title: string;
-  text: string;
+  text: string; //NB: the text being passed in should be valid HTML.
   accessToken: string;
   subdomain: string;
   azCredError: boolean;
