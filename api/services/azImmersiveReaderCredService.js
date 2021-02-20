@@ -1,6 +1,6 @@
 const keys = require("../../keys");
 const axios = require("axios");
-// Needed this `qs` package to make axios play well with urlencoded forms. See https://www.npmjs.com/package/axios#using-applicationx-www-form-urlencoded-format
+// Needed this `qs` package to make axios work well with urlencoded forms. See https://www.npmjs.com/package/axios#using-applicationx-www-form-urlencoded-format
 const qs = require("qs");
 
 // insuring all secrets are strings.
@@ -10,12 +10,21 @@ const CLIENT_SECRET = keys.CLIENT_SECRET.toString();
 const SUBDOMAIN = keys.SUBDOMAIN.toString();
 
 module.exports = {
-  // development function to throw secrets back to make sure they are reading in correctly.
+  /**
+   * Development function to return all the stored secrets for debugging purposes.
+   * @param req
+   * @param res
+   */
   showSecrets: function (req, res) {
     const secrets = [TENANT_ID, CLIENT_ID, CLIENT_SECRET, SUBDOMAIN];
     return res.json(secrets);
   },
-  // Took this with modifications to use axios instead of deprecated package `request` from: https://docs.microsoft.com/en-us/azure/cognitive-services/immersive-reader/quickstarts/client-libraries?pivots=programming-language-nodejs
+  /**
+   * Goes out to Azure AD to get the credentials needed to use Azure Immersive Reader.
+   * Took this with modifications to use axios instead of deprecated package `request` from: https://docs.microsoft.com/en-us/azure/cognitive-services/immersive-reader/quickstarts/client-libraries?pivots=programming-language-nodejs
+   * @param req
+   * @param res
+   */
   getCredentialsAxios: function (req, res) {
     const WINDOWS_LOGIN_URL = `https://login.windows.net/${TENANT_ID}/oauth2/token`;
     axios({
